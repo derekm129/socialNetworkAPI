@@ -1,5 +1,7 @@
+// Imports
 const { Schema, Types } = require('mongoose');
 
+// reaction schema
 const reactionSchema = new Schema(
     {
     reactionId: {
@@ -22,4 +24,5 @@ const reactionSchema = new Schema(
     }
 );
 
+// exports
 module.exports = reactionSchema;

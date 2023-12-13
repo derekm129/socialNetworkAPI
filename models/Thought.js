@@ -1,5 +1,7 @@
+// Imports
 const { Schema, model } = require('mongoose');
 
+// thought schema
 const thoughtSchema = new Schema(
     {
         thoughtText: {
@@ -27,10 +29,13 @@ const thoughtSchema = new Schema(
     }
 );
 
+// retrieves the length of the thought's reactions array field on query
 thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
+// create Thought model with thoughtSchema
 const Thought = model('thoughts', thoughtSchema);
 
+// exports
 module.exports = Thought;

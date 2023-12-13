@@ -1,6 +1,8 @@
+// Imports
 const { Schema, model } = require('mongoose');
 const reactionSchema =  require('./Reaction');
 
+// User schema
 const userSchema = new Schema(
     {
         username: {
@@ -39,10 +41,13 @@ const userSchema = new Schema(
     }
 );
 
+// retrieves the length of the user's friends array field on query
 userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
 
+// create User model with userSchema
 const User = model('user', userSchema);
 
+// exports
 module.exports = User;
