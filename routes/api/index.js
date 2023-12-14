@@ -1,8 +1,8 @@
-const { connect, connection } = require('mongoose');
+const router = require('express').Router();
+const thoughtRoutes = require('./thoughtRoutes');
+const userRoutes = require('./userRoutes');
 
-const connectionString =
-  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialDB';
+router.use('/thoughts', thoughtRoutes);
+router.use('/users', userRoutes);
 
-connect(connectionString);
-
-module.exports = connection;
+module.exports = router;
