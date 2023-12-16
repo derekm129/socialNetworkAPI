@@ -1,18 +1,18 @@
 // Imports
 const { Schema, model } = require('mongoose');
-const reactionSchema =  require('./Reaction');
+const Reaction = require("./Reaction")
 
 // User schema
 const userSchema = new Schema(
     {
         username: {
-            type: string,
+            type: String,
             unique: true,
             required: true,
             trimmed: true
         },
         email: {
-            type: string,
+            type: String,
             unique: true,
             required: true,
             match: [
