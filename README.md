@@ -7,7 +7,7 @@
 - I learned from making this application how to use MongoDB.
 
 ## Installation
-- Enter 'npm install' then 'npm run start' to get the application started.
+- Enter 'npm install' then 'npm start' to get the application started.
 
 ## Usage
 - This app runs in the browser and offline.
