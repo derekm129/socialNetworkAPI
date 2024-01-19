@@ -67,7 +67,7 @@ async addReaction(req, res) {
     try {
         const reaction = await Thought.findOneAndUpdate(
             { _id: req.params.thoughtId},
-            { $addToSet: {friends: req.params.reactionId} },
+            { $addToSet: {reactions: req.body} },
             { runValidators: true, new: true }
         );
         if (!reaction) {
@@ -84,9 +84,9 @@ async addReaction(req, res) {
 // DELETE reaction by reactionId value
     async deleteReaction(req, res) {
         try {
-            const reaction = await Thought.findOneAndDelete(
+            const reaction = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId},
-                { $pull: {friends: req.params.reactionId} },
+                { $pull: {reactions: {_id: req.params.reactionId}} },
                 { runValidators: true, new: true }
                 );
             if (!reaction) {
