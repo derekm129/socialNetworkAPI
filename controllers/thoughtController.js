@@ -67,7 +67,7 @@ async addReaction(req, res) {
     try {
         const reaction = await Thought.findOneAndUpdate(
             { _id: req.params.thoughtId},
-            { $addToSet: {reactions: req.body.reactionId} },
+            { $addToSet: {reactions: req.body} },
             { runValidators: true, new: true }
         );
         if (!reaction) {
@@ -86,7 +86,7 @@ async addReaction(req, res) {
         try {
             const reaction = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId},
-                { $pull: {friends: req.params.reactionId} },
+                { $pull: {reactions: {_id: req.params.reactionId}} },
                 { runValidators: true, new: true }
                 );
             if (!reaction) {
