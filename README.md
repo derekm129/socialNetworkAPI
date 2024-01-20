@@ -10,7 +10,7 @@
 - Enter 'npm install' then 'npm start' to get the application started.
 
 ## Usage
-- This app runs in the browser and offline.
+- This app runs in insomnia.
 ![Screenshot](./assets/images/screenshot.png)
 
 https://drive.google.com/file/d/1ljI_VTvA1hhqFhrIpmNZ-DT9pyP6jZtz/view
